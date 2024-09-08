@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { getToastStore } from '@skeletonlabs/skeleton'
+	import { enhance } from '$app/forms'
 	export let form
 
 	const toastStore = getToastStore()
 
-	if (form?.error) {
-		toastStore.trigger({ message: form.error })
-	}
+	$: if (form?.error) toastStore.trigger({ message: form?.error })
 
 	let inputType = 'password'
 
@@ -18,6 +17,7 @@
 <form
 	method="post"
 	action="?/signIn"
+	use:enhance
 	class="min-h-screen flex flex-col justify-center items-center px-5"
 >
 	<div class="card p-5 flex flex-col justify-center items-center">
