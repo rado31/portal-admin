@@ -2,6 +2,7 @@ import { join } from 'path'
 import type { Config } from 'tailwindcss'
 import forms from '@tailwindcss/forms'
 import { skeleton } from '@skeletonlabs/tw-plugin'
+import { screens } from 'tailwindcss/defaultTheme'
 
 export default {
 	darkMode: 'class',
@@ -14,6 +15,10 @@ export default {
 	],
 	theme: {
 		extend: {},
+		screens: {
+			xs: '320px',
+			...screens,
+		},
 	},
 	plugins: [
 		forms,
@@ -22,6 +27,10 @@ export default {
 				preset: [
 					{
 						name: 'skeleton',
+						enhancements: true,
+					},
+					{
+						name: 'hamlindigo',
 						enhancements: true,
 					},
 				],
