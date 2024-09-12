@@ -11,12 +11,12 @@
 	import Icon from '@iconify/svelte'
 	import { AppBar } from '@skeletonlabs/skeleton'
 	import { page } from '$app/stores'
-	import Editor from '$lib/components/Editor.svelte'
+	import FileForm from '$lib/components/FileForm.svelte'
 
 	initializeStores()
 
 	const modalRegistry: Record<string, ModalComponent> = {
-		editor: { ref: Editor },
+		editor: { ref: FileForm },
 	}
 </script>
 
