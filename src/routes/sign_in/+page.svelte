@@ -22,17 +22,13 @@
 >
 	<div class="card p-5 flex flex-col justify-center items-center">
 		<h3 class="h3 text-center">SIGN IN</h3>
-		<div
-			class="input-group input-group-divider grid-cols-[auto_1fr_auto] mt-5"
-		>
-			<div class="input-group-shim">+993</div>
-			<input
-				name="phone"
-				type="tel"
-				placeholder="61234567"
-				autocomplete="off"
-			/>
-		</div>
+		<input
+			class="input mt-5"
+			name="username"
+			type="text"
+			placeholder="Username"
+			autocomplete="off"
+		/>
 		<div class="input-group input-group-divider grid-cols-[1fr_auto] mt-5">
 			<input
 				name="password"

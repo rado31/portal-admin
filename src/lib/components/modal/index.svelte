@@ -4,6 +4,7 @@
 	import Title from '$lib/components/form/title.svelte'
 	import Input from '$lib/components/base/input.svelte'
 	import TextArea from '$lib/components/base/textArea.svelte'
+	// TO-DO file filter
 </script>
 
 <div class="bg-[#2c3656] p-5 rounded-lg">
@@ -14,8 +15,13 @@
 		<Buttons />
 	</Form>
 	<Form className="mt-5" action="?/uploadImage" enctype="multipart/form-data">
-		<Title name="File's image" />
-		<Input label="Image" name="image" type="file" />
+		<Title name="Image" />
+		<Input name="image" type="file" />
+		<Buttons />
+	</Form>
+	<Form className="mt-5" action="?/uploadFile" enctype="multipart/form-data">
+		<Title name="File" />
+		<Input name="file" type="file" />
 		<Buttons />
 	</Form>
 </div>

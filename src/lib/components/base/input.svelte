@@ -5,7 +5,7 @@
 	export let className = 'input'
 </script>
 
-<label class="label">
+<label class="label mt-5">
 	<span>{label}</span>
 	<input {name} {type} class={className} />
 </label>
