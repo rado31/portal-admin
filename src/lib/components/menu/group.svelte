@@ -6,14 +6,14 @@
 		{
 			id: 1,
 			href: '/',
-			icon: 'mdi:music',
-			title: 'Musics',
+			icon: 'mdi:film-outline',
+			title: 'Films',
 		},
 		{
 			id: 2,
-			href: '/films',
-			icon: 'mdi:film-outline',
-			title: 'Films',
+			href: '/musics',
+			icon: 'mdi:music',
+			title: 'Musics',
 		},
 		{
 			id: 3,
