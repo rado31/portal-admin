@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { AppBar } from '@skeletonlabs/skeleton'
 	import Group from '$lib/components/menu/group.svelte'
 </script>

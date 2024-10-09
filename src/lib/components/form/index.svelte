@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { enhance } from '$app/forms'
 	export let action = '#'
 	export let enctype = 'application/x-www-form-urlencoded'

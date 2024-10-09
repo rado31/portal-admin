@@ -1,5 +1,7 @@
 import type { RequestEvent } from './$types'
 
+export async function load() {}
+
 export async function uploadImage({ request }: RequestEvent) {
 	const data = await request.formData()
 

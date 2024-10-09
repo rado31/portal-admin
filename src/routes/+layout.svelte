@@ -6,7 +6,7 @@
 		Modal,
 		type ModalComponent,
 	} from '@skeletonlabs/skeleton'
-	import ModalForm from '$lib/components/modal/index.svelte'
+	import ModalForm from '$lib/components/modalForm/index.svelte'
 	import Menu from '$lib/components/menu/index.svelte'
 
 	initializeStores()

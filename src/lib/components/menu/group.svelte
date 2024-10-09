@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { TabGroup } from '@skeletonlabs/skeleton'
 	import Item from '$lib/components/menu/item.svelte'
 
