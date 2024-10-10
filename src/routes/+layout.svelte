@@ -8,6 +8,7 @@
 	} from '@skeletonlabs/skeleton'
 	import ModalForm from '$lib/components/modalForm/index.svelte'
 	import Menu from '$lib/components/menu/index.svelte'
+	import { page } from '$app/stores'
 
 	initializeStores()
 
@@ -19,6 +20,8 @@
 <Toast position="t" />
 <Modal components={modalRegistry} />
 
-<Menu />
+{#if $page.route.id !== '/sign_in'}
+	<Menu />
+{/if}
 
 <slot />

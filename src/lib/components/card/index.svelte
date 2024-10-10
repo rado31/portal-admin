@@ -4,10 +4,11 @@
 
 	export let src = ''
 	export let title = ''
+	export let filmID: number
 </script>
 
 <div class="card card-hover p-4">
 	<Avatar {src} width="w-full" rounded="rounded-lg" />
 	<p class="mt-5 text-center">{title}</p>
-	<Buttons />
+	<Buttons {filmID} />
 </div>

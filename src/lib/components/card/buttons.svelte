@@ -1,7 +1,11 @@
 <script lang="ts">
 	import Button from '$lib/components/base/button.svelte'
+	import { getFilms } from '$lib/states/films'
 	import type { ModalSettings } from '@skeletonlabs/skeleton'
 	import { getModalStore } from '@skeletonlabs/skeleton'
+
+	export let filmID: number
+	const films = getFilms()
 
 	const modalStore = getModalStore()
 
@@ -19,7 +23,11 @@
 			type: 'confirm',
 			title: 'Please Confirm',
 			body: 'Are you sure you wish to delete?',
-			response: (r: boolean) => console.log('response:', r),
+			response: (r: boolean) => {
+				if (r) {
+					films.update(val => val.filter(film => film.id !== filmID))
+				}
+			},
 		}
 
 		modalStore.trigger(modal)
