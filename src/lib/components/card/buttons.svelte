@@ -1,18 +1,20 @@
 <script lang="ts">
 	import Button from '$lib/components/base/button.svelte'
 	import { getFilms } from '$lib/states/films'
-	import type { ModalSettings } from '@skeletonlabs/skeleton'
-	import { getModalStore } from '@skeletonlabs/skeleton'
+	import type { Film } from '$lib/types/films'
+	import type { ModalSettings, ModalStore } from '@skeletonlabs/skeleton'
+	import { getContext } from 'svelte'
 
-	export let filmID: number
+	export let film: Film
+
 	const films = getFilms()
-
-	const modalStore = getModalStore()
+	const modalStore = getContext<ModalStore>('modalStore')
 
 	const editFn = () => {
 		const modal: ModalSettings = {
 			type: 'component',
 			component: 'fileUpdate',
+			meta: film,
 		}
 
 		modalStore.trigger(modal)
@@ -25,7 +27,7 @@
 			body: 'Are you sure you wish to delete?',
 			response: (r: boolean) => {
 				if (r) {
-					films.update(val => val.filter(film => film.id !== filmID))
+					films.update(val => val.filter(f => f.id !== film.id))
 				}
 			},
 		}

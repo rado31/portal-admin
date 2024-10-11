@@ -5,7 +5,7 @@ export type Film = {
 	title: string
 	description: string
 	language: string
-	category: Category
-	image: string
-	file: string
+	sub_category_id: Category
+	image_path: string
+	path: string
 }

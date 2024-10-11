@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { Avatar } from '@skeletonlabs/skeleton'
 	import Buttons from '$lib/components/card/buttons.svelte'
+	import type { Film } from '$lib/types/films'
 
 	export let src = ''
 	export let title = ''
-	export let filmID: number
+	export let film: Film
 </script>
 
 <div class="card card-hover p-4">
 	<Avatar {src} width="w-full" rounded="rounded-lg" />
 	<p class="mt-5 text-center">{title}</p>
-	<Buttons {filmID} />
+	<Buttons {film} />
 </div>

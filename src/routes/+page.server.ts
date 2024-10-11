@@ -1,56 +1,12 @@
+import axios from 'axios'
 import type { RequestEvent } from './$types'
+import { PUBLIC_API } from '$env/static/public'
+import type { Film } from '$lib/types/films'
 
 export async function load() {
-	const films = [
-		{
-			id: 1,
-			title: 'Phonk',
-			description: 'Some film',
-			language: 'tk',
-			category: {
-				id: 1,
-				title: 'Action',
-			},
-			image: 'phonk.png',
-			file: 'phonk.png',
-		},
-		{
-			id: 2,
-			title: 'Phonk',
-			description: 'Some film',
-			language: 'tk',
-			category: {
-				id: 2,
-				title: 'Horror',
-			},
-			image: 'phonk.png',
-			file: 'phonk.png',
-		},
-		{
-			id: 3,
-			title: 'Phonk',
-			description: 'Some film',
-			language: 'tk',
-			category: {
-				id: 2,
-				title: 'Horror',
-			},
-			image: 'phonk.png',
-			file: 'phonk.png',
-		},
-		{
-			id: 4,
-			title: 'Phonk',
-			description: 'Some film',
-			language: 'tk',
-			category: {
-				id: 2,
-				title: 'Horror',
-			},
-			image: 'phonk.png',
-			file: 'phonk.png',
-		},
-	]
+	const { data: films } = await axios.get<Film[]>(
+		`${PUBLIC_API}/client/films`,
+	)
 
 	return { films }
 }
