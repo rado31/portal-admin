@@ -1,6 +1,6 @@
 import axios from 'axios'
 import type { RequestEvent } from './$types'
-import { API } from '$env/static/private'
+import { PUBLIC_API } from '$env/static/public'
 import { fail, redirect } from '@sveltejs/kit'
 
 async function signIn({ request, cookies }: RequestEvent) {
@@ -14,7 +14,7 @@ async function signIn({ request, cookies }: RequestEvent) {
 	let isSuccess = false
 
 	try {
-		const res = await axios.post(`${API}/login`, requestBody, {
+		const res = await axios.post(`${PUBLIC_API}/admin/login`, requestBody, {
 			timeout: 5000,
 		})
 
